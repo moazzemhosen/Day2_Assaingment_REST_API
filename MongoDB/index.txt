@@ -1,0 +1,92 @@
+
+
+> use assingment
+switched to db assingment
+> db
+assingment
+> db.createCollection("user")
+{ "ok" : 1 }
+> db.user.insert({frist_name:"Moazzem",last_name:"Hosen",email:"moazzem9@gmail.com",gender:"Male",ip_address:"192.0189.02.1",age:"24"})
+WriteResult({ "nInserted" : 1 })
+> show collections
+user
+
+> db.user.find()
+{ "_id" : ObjectId("62278b00789d4ea41b7a453e"), "frist_name" : "Moazzem", "last_name" : "Hosen", "email" : "moazzem9@gmail.com", "gender" : "Male", "ip_address" : "192.0189.02.1", "age" : "24" }
+> db.user.find().pretty()
+{
+        "_id" : ObjectId("62278b00789d4ea41b7a453e"),
+        "frist_name" : "Moazzem",
+        "last_name" : "Hosen",
+        "email" : "moazzem9@gmail.com",
+        "gender" : "Male",
+        "ip_address" : "192.0189.02.1",
+        "age" : "24"
+}
+> db.user.insertMany([{frist_name:"Moazzem",last_name:"Hosen",email:"moazzem9@gmail.com",gender:"Male",ip_address:"192.0189.02.1",age:"24"},{frist_name:"Hosen",last_name:"Sardar",email:"moazzemhosen9@gmail.com",gender:"Male",ip_address:"192.0189.02.1",age:"26"},{frist_name:"Tania",last_name:"mallik",email:"tania9@gmail.com",gender:"female",ip_address:"191.0189.02.1",age:"21"},{frist_name:"Tanmay",last_name:"Ghosh",email:"Tanmay@gmail.com",gender:"Male",ip_address:"192.0189.07.2",age:"23"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62278cd7789d4ea41b7a453f"),
+                ObjectId("62278cd7789d4ea41b7a4540"),
+                ObjectId("62278cd7789d4ea41b7a4541"),
+                ObjectId("62278cd7789d4ea41b7a4542")
+        ]
+}
+> db.user.find().pretty()
+{
+        "_id" : ObjectId("62278b00789d4ea41b7a453e"),
+        "frist_name" : "Moazzem",
+        "last_name" : "Hosen",
+        "email" : "moazzem9@gmail.com",
+        "gender" : "Male",
+        "ip_address" : "192.0189.02.1",
+        "age" : "24"
+}
+{
+        "_id" : ObjectId("62278cd7789d4ea41b7a453f"),
+        "frist_name" : "Moazzem",
+        "last_name" : "Hosen",
+        "email" : "moazzem9@gmail.com",
+        "gender" : "Male",
+        "ip_address" : "192.0189.02.1",
+        "age" : "24"
+}
+{
+        "_id" : ObjectId("62278cd7789d4ea41b7a4540"),
+        "frist_name" : "Hosen",
+        "last_name" : "Sardar",
+        "email" : "moazzemhosen9@gmail.com",
+        "gender" : "Male",
+        "ip_address" : "192.0189.02.1",
+        "age" : "26"
+}
+{
+        "_id" : ObjectId("62278cd7789d4ea41b7a4541"),
+        "frist_name" : "Tania",
+        "last_name" : "mallik",
+        "email" : "tania9@gmail.com",
+        "gender" : "female",
+        "ip_address" : "191.0189.02.1",
+        "age" : "21"
+}
+{
+        "_id" : ObjectId("62278cd7789d4ea41b7a4542"),
+        "frist_name" : "Tanmay",
+        "last_name" : "Ghosh",
+        "email" : "Tanmay@gmail.com",
+        "gender" : "Male",
+        "ip_address" : "192.0189.07.2",
+        "age" : "23"
+}
+
+> db.user.findOne({frist_name:"Moazzem"})
+{
+        "_id" : ObjectId("62278b00789d4ea41b7a453e"),
+        "frist_name" : "Moazzem",
+        "last_name" : "Hosen",
+        "email" : "moazzem9@gmail.com",
+        "gender" : "Male",
+        "ip_address" : "192.0189.02.1",
+        "age" : "24"
+}
